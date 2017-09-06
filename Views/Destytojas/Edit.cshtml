@@ -1,0 +1,44 @@
+﻿@model mvctest.Models.Destytojas
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Destytojas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Vardas" class="control-label"></label>
+                <input asp-for="Vardas" class="form-control" />
+                <span asp-validation-for="Vardas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pavarde" class="control-label"></label>
+                <input asp-for="Pavarde" class="form-control" />
+                <span asp-validation-for="Pavarde" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Metai" class="control-label"></label>
+                <input asp-for="Metai" class="form-control" />
+                <span asp-validation-for="Metai" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="IdDestytojas" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
